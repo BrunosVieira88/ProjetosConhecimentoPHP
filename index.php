@@ -18,5 +18,16 @@
 <?php for ($i=0; $i < count($umaLista); $i++) { ?>
    <p><?php echo $umaLista[$i]; ?></p>
 <?php } ?>
+
+<?php if(array_key_exists('Andre',$nomes)) {   ?>   
+      <p><?php echo "existe" ?></p> 
+   
+<?php }else{
+    echo "não existe";
+} 
+
+?>
+  
+
 </body>
 </html>
