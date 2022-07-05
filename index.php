@@ -27,7 +27,9 @@
 } 
 
 ?>
-  
+  <?php 
+  require ('novo.php');
+  ?>
 
 </body>
 </html>
