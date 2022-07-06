@@ -9,9 +9,20 @@
     $notas2 = [
         'aline'=>7,
         'bruno'=> 10 
-       
+    ];
+
+    $alunos = [
+        'bruno', 
+        'isa',
+        'aline'
 
     ];
+
+    $alunos2 = [
+        'aline',
+        'bruno' 
+    ];
+
 
 
 
@@ -29,5 +40,32 @@
     <?php var_dump(array_diff_assoc($notas,$notas2)) ;?><br>
     <?php var_dump(array_keys($notas)) ;?><br>
     <?php var_dump(array_values($notas)) ;?><br>
+    <?php var_dump(array_merge($alunos,$alunos2)) ;?><br>
+    <?php /*var_dump([...$alunos,'aluno inserido via descompactando',...$alunos2]) ;*/?>
+   
+    <?php 
+    
+     /*remover um elemento do inicio */ 
+     var_dump($alunos);
+     array_shift($alunos);
+     echo "Removi um elemento do inicio <br>";
+     foreach($alunos as $aluno){
+         echo $aluno."<br>";
+     }?><br>
+    <?php 
+     /*remover um elemento do final */
+    array_pop($alunos);
+    echo "Removi um elemento do final <br>";
+     foreach($alunos as $aluno){
+         echo $aluno."<br>";
+     }
+   
+    array_push($alunos,'Thais','Thayna','Leticia');
+    array_unshift($alunos,'Marina','Sara');
+    $alunos[]= 'luiz';
+     var_dump($alunos);?><br>
+
+   <a href="novo.php">novo</a>  
+    
 </body>
 </html>
