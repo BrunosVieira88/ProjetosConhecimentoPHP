@@ -7,6 +7,13 @@ function qualquer($funcao){
     echo $funcao();
 }
 
+function Umpaiz($pais):bool
+{
+
+    return strpos($pais['pais'], "z") == false; 
+
+}
+
 $umafuncao = function (){
     return "<p>uma outra função</p>";
 }
@@ -23,6 +30,9 @@ $umafuncao = function (){
     <title>Document</title>
 </head>
 <body>
+
+    <h1>Numero de medalhas</h1>
+    
     <?php $nome = "Bruno Santos Vieira"; ?>
 
 
@@ -42,10 +52,16 @@ $umafuncao = function (){
 
         foreach($dados as $dado){
 
-            echo $dado['pais'];
+            $dado['pais'] =  mb_convert_case($dado['pais'],MB_CASE_UPPER);
 
+            echo " ".$dado['pais']."<br>";
+           
         }
-    
+        $klr= array_filter($dados , 'Umpaiz');
+       var_dump($klr);
+
+       echo "<br>".json_encode($klr)."<br>";
+
     ?></p>
  
 
