@@ -10,9 +10,10 @@ class Contato{
     private $endereco;
     private $cep;
 
-    public function __construct(string $email , string $endereco , string $cep)
+    public function __construct(string $email , string $endereco , string $cep , string $telefone)
     {
         $this->validaEmail($email) ? $this->email = $email :$this->email =" E-mail invalido!";
+        $this->validaTelefone($telefone) ? $this->telefone = $telefone :$this->telefone =" Telefone invalido!";
         $this->endereco = $endereco;
         $this->cep = $cep;
         
@@ -30,7 +31,15 @@ class Contato{
         return $this->email;
     }
 
+    public function getTelefone(){
+        return $this->telefone;
+    }
+
     public function validaEmail(string $email){
         return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
+    public function validaTelefone(string $telefone){
+        return preg_match('/^[0-9]{4}-^[0-9]{4}$/',$telefone, $telefoneFormatado);
     }
 }

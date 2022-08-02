@@ -14,7 +14,7 @@ class Usuario {
         $umvalor = explode(" ",$nome);
 
         $this->nome = $umvalor;
-    
+       
         $sobrenome = count($umvalor);
 
         
@@ -25,8 +25,7 @@ class Usuario {
     }
    
     public function getNome(){
-
-        
+       
         return $this->nome;
     }
 
